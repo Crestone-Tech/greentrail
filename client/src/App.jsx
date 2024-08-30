@@ -2,6 +2,7 @@ import React from "react";
 import { useState } from "react";
 import Header from "./components/Header";
 import "./App.css";
+import GitHubLink from "./components/GitHubLink";
 
 function App() {
   const [count, setCount] = useState(0);
@@ -10,12 +11,8 @@ function App() {
     <>
       <Header />
       <footer id="contact">
-        <a
-          href="https://github.com/crestonesoftware/greentrail"
-          target="_blank"
-        >
-          <i className="fa fa-github light"></i>
-        </a>
+
+        <GitHubLink />
       </footer>
     </>
   );
