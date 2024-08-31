@@ -20,7 +20,10 @@ Community.hasMany(Provider, {
 });
 
 Provider.hasOne(Community, {
-  foreignKey: "community_id",
+  // FYI, the next line of code used to reference community_id, i.e.
+  // foreignKey: "community_id",
+  // however, when creating the new repo, queries from Insomnia were trying to get column community.community_id, which does not exist. Changing the column to "id" seems to fix the problem. The mystery is: what changed between when we completed project 2 and now? (8/24/2024)
+  foreignKey: "id",
 });
 
 Site.hasOne(Provider, {
@@ -41,7 +44,10 @@ Tag.belongsToMany(Provider, {
 });
 
 Event.hasOne(Community, {
-  foreignKey: "community_id",
+  // FYI, the next line of code used to reference community_id, i.e.
+  // foreignKey: "community_id",
+  // however, when creating the new repo, queries from Insomnia were trying to get column community.community_id, which does not exist. Changing the column to "id" seems to fix the problem. The mystery is: what changed between when we completed project 2 and now? (8/24/2024)
+  foreignKey: "id",
   onDelete: "CASCADE",
 });
 
