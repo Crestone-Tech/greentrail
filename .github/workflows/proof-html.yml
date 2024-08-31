@@ -1,11 +1,17 @@
-name: Proof HTML
-on:
-  push:
-  workflow_dispatch:
+name: Validate HTML
+
+on: push
+
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: anishathalye/proof-html@v1.1.0
+      - uses: actions/checkout@v2
+      - name: Validate HTML
+        uses: anishathalye/proof-html@v2
         with:
-          directory: ./
+          directory: ./temp
+          check_html: true
+          check_css: true
+          check_external_hash: true
+          tokens: '{"https://example.com": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx", "https://twitter.com": "yyyyyyyyyyyyyyyyyyyyyyy"}'
