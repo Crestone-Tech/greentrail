@@ -18,8 +18,10 @@ const router = require("express").Router();
 // router.use("/providers", providerRoutes);
 
 ///////////STUBS
+const url = "/api"
+
 router.get("/", async (req, res) => {
-  const stubString = `here we are ${req.url} ${req.method}`;
+  const stubString = `received ${req.method} at ${url}${req.url} `;
   console.log(stubString);
   res.status(200).json(stubString);
 });

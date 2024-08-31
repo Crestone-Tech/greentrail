@@ -11,9 +11,12 @@ router.use("/api", apiRoutes);
 // router.use("/", homeRoutes);
 
 ///////////STUBS
+const url = ""
+
 router.get("/", async (req, res) => {
-  console.log("here we are");
-  res.status(200).json("called the route stub");
+  const stubString = `received ${req.method} at ${url}${req.url} `;
+  console.log(stubString);
+  res.status(200).json(stubString);
 });
 
 /* EXPORTS */
