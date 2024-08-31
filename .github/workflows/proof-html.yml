@@ -10,7 +10,7 @@ jobs:
       - name: Validate HTML
         uses: anishathalye/proof-html@v2
         with:
-          directory: ./temp
+          directory: ./client
           check_html: true
           check_css: true
           check_external_hash: true
