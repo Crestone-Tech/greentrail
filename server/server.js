@@ -1,12 +1,12 @@
 const path = require("path");
 const express = require("express");
-//const session = require("express-session");
+const session = require("express-session");
 
-//const SequelizeStore = require("connect-session-sequelize")(session.Store);
+const SequelizeStore = require("connect-session-sequelize")(session.Store);
 
 const routes = require("./controllers");
-// const sequelize = require("./config/connection");
-//TODO const helpers = require("./utils/helpers");
+const sequelize = require("./config/connection");
+const { logDBConnectionDetails } = require("./utils/environment-helper");
 
 const app = express();
 const PORT = process.env.PORT || 3001;
@@ -29,7 +29,8 @@ app.use(express.static(path.join(__dirname, "public")));
 
 app.use(routes);
 
-//TODO const helpers = require("./utils/helpers");
-//sequelize.sync({ force: false }).then(() => {
-app.listen(PORT, () => console.log("Now listening on port", PORT));
-// });
+sequelize.sync({ force: true }).then(() => {
+  // call helper function to log DB variables used in connection
+  logDBConnectionDetails();
+  app.listen(PORT, () => console.log("Now listening on port", PORT));
+});
