@@ -1,17 +1,18 @@
 import React from "react";
-import { useState } from "react";
-import Header from "./components/Header";
+
 import "./App.css";
+import { Outlet } from "react-router-dom";
 import GitHubLink from "./components/GitHubLink";
+import DarkNav from "./components/DarkNav";
 
 function App() {
-  const [count, setCount] = useState(0);
-
   return (
     <>
-      <Header />
+      <DarkNav />
+      <main>
+        <Outlet />
+      </main>
       <footer id="contact">
-
         <GitHubLink />
       </footer>
     </>
