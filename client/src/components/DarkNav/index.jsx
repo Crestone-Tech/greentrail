@@ -1,6 +1,5 @@
 import React from "react";
 
-
 export default function DarkNav() {
   return (
     <>
@@ -14,17 +13,17 @@ export default function DarkNav() {
         <i className="fa-solid fa-x hidden" id="close-menu"></i>
         <div id="nav-links">
           <a href="/locations">Locations</a>
-          {/* TODO show/hide when logged in or not */}
+          {/* TODO display elements per logged in/not logged in state */}
           {/* #if loggedIn */}
           {/* TODO /add route */}
-          <a href="/add">Add</a>
+          {/* <a href="/add">Add</a> */}
           {/* TODO login route */}
-          <a href="/" id="logout">
+          {/* <a href="/" id="logout">
             Logout
-          </a>
+          </a> */}
           {/* JAVASCRIPT */}
           {/* TODO logout Script */}
-          <script src="/js/logout.js"></script>
+          {/* <script src="/js/logout.js"></script> */}
           {/* {{else}} */}
           {/* TODO login route */}
           <a href="/login" id="login">
@@ -34,7 +33,26 @@ export default function DarkNav() {
         </div>
       </nav>
 
-      
+      {/* HAMBURGER MENU */}
+      {/* <div className="hidden fade-in-quick light inter" id="nav-display">
+        <div id="nav-display-inner">
+          <a href="/locations" className="fade-in">
+            Locations
+          </a> */}
+          {/* TODO display conditional on being logged in */}
+          {/* {{#if loggedIn}}
+      <a href="/add" className="fade-in">Add</a>
+      <a href="/" className="fade-in" id="logout">Logout</a>
+    {{else}} */}
+          <a href="/login" className="fade-in" id="login">
+            Login
+          </a>
+          {/* {{/if}} */}
+        {/* </div>
+      </div> */}
+
+      {/* JAVASCRIPT */}
+      <script src="/js/hamburger-menu.js"></script>
     </>
   );
 }
