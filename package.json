@@ -1,0 +1,23 @@
+{
+  "name": "greentrail",
+  "version": "1.0.0",
+  "description": "## Description",
+  "main": "server/server.js",
+  "scripts": {
+    "start": "node server/server.js --ignore client",
+    "server_only": "node server/server.js --ignore client",
+    "seed": "cd server && npm run seed",
+    "install": "cd server && npm i && cd ../client && npm i",
+    "develop": "concurrently \"cd server && npm run watch\" \"cd client && npm run dev\"",
+    "both": "concurrently \"cd server && npm run watch\" \"cd client && npm run dev\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Crestone-Tech/greentrail"
+  },
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "concurrently": "^8.2.2"
+  }
+}
