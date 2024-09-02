@@ -8,7 +8,9 @@ import DarkNav from "./components/DarkNav";
 function App() {
   return (
     <>
-      <DarkNav />
+      <header>
+        <DarkNav />
+      </header>
       <main>
         <Outlet />
       </main>
