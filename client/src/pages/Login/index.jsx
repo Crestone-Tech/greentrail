@@ -92,7 +92,7 @@ export default function Login() {
             name="sign-up-password"
           />
           <button id="go-sign-up">Sign Up</button>
-          <p className="hidden signin-alert-important" id="signin-alert">
+          <p className="hidden signin-alert-important" id="signup-failed-alert">
             Sorry, we were unable to create your account. Please try again.
           </p>
         </section>
