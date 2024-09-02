@@ -30,6 +30,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/locations",
+        // TODO route to Locations when Locations page is converted to React
         element: <Homepage />,
       },
     ],
