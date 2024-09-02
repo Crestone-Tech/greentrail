@@ -15,6 +15,10 @@ const firstAlert = document.querySelector("#signup-first-alert");
 const lastAlert = document.querySelector("#signup-last-alert");
 const passwordAlert = document.querySelector("#signup-password-alert");
 
+const URL_LOCAL_BASE = "http://localhost:3001";
+const URL_LOCAL_LOGIN = URL_LOCAL_BASE + "/api/users/login";
+const URL_LOCAL_SIGNUP = URL_LOCAL_BASE + "/api/users";
+
 /* FUNCTIONS */
 /* Show sign in and hide sign up */
 function showSignIn() {
@@ -36,7 +40,6 @@ const userSignIn = async (event) => {
   const password = document.querySelector("#sign-in-password").value;
 
   if (!email) {
-    console.log("email is missing");
     signinEmailAlert.classList.remove("hidden");
   } else {
     signinEmailAlert.classList.add("hidden");
@@ -49,24 +52,23 @@ const userSignIn = async (event) => {
   }
 
   if (email && password) {
-    console.log("userSignIn: we have email and password");
-    const response = await fetch("http://localhost:3001/api/users/login", {
+    const response = await fetch(URL_LOCAL_LOGIN, {
       method: "POST",
       body: JSON.stringify({ email, password }),
       headers: { "Content-Type": "application/json" },
     });
-    console.log("after post");
+
     if (response.ok) {
       document.location.replace("/locations");
     } else {
       signinAlert.classList.remove("hidden");
     }
-    console.log("end");
   } else console.log("userSignIn: missing email and password");
 };
 
 /* Signs a user up */
 const userSignUp = async (event) => {
+  console.log("userSignUp: start");
   event.preventDefault();
 
   const first = document.querySelector("#sign-up-first").value;
@@ -101,15 +103,18 @@ const userSignUp = async (event) => {
   }
 
   if (first && last && email && password) {
-    const response = await fetch("/api/users", {
+    const response = await fetch(URL_LOCAL_SIGNUP, {
       method: "POST",
       body: JSON.stringify({ first, last, email, password }),
       headers: { "Content-Type": "application/json" },
     });
 
-    if (response.ok) {
+    // if (response.ok) {
+    if (1 == 12) {
+      console.log("ok");
       document.location.replace("/locations");
     } else {
+      console.log("not ok");
       signupAlert.classList.remove("hidden");
     }
   }
