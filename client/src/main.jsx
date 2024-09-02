@@ -6,7 +6,7 @@ import { createRoot } from "react-dom/client";
 import App from "./App.jsx";
 import "./index.css";
 import "./assets/css/effects.css";
-import Signup from './pages/Signup';
+import Signup from "./pages/Signup";
 import Login from "./pages/Login";
 
 import Homepage from "./pages/Homepage";
@@ -28,6 +28,10 @@ const router = createBrowserRouter([
         path: "/login",
         element: <Login />,
       },
+      {
+        path: "/locations",
+        element: <Homepage />,
+      },
     ],
   },
 ]);
@@ -35,6 +39,6 @@ const router = createBrowserRouter([
 createRoot(document.getElementById("root")).render(
   // TODO how to avoid errors from scripts being run twice in StrictMode?
   // <StrictMode>
-    <RouterProvider router={router} />
+  <RouterProvider router={router} />
   // </StrictMode>
 );
