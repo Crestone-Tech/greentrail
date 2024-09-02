@@ -10,10 +10,11 @@ const signinEmailAlert = document.querySelector("#signin-email-alert");
 const signinPasswordAlert = document.querySelector("#signin-password-alert");
 const signinAlert = document.querySelector("#signin-alert");
 
-const emailAlert = document.querySelector("#signup-email-alert");
-const firstAlert = document.querySelector("#signup-first-alert");
-const lastAlert = document.querySelector("#signup-last-alert");
-const passwordAlert = document.querySelector("#signup-password-alert");
+const signupEmailAlert = document.querySelector("#signup-email-alert");
+const signupFirstNameAlert = document.querySelector("#signup-first-alert");
+const signupLastNameAlert = document.querySelector("#signup-last-alert");
+const signupPasswordAlert = document.querySelector("#signup-password-alert");
+const signupFailedAlert = document.querySelector("#signup-failed-alert");
 
 const URL_LOCAL_BASE = "http://localhost:3001";
 const URL_LOCAL_LOGIN = URL_LOCAL_BASE + "/api/users/login";
@@ -79,27 +80,27 @@ const userSignUp = async (event) => {
   const validEmail = isValidEmail(email);
 
   if (!email || !validEmail) {
-    emailAlert.classList.remove("hidden");
+    signupEmailAlert.classList.remove("hidden");
   } else {
-    emailAlert.classList.add("hidden");
+    signupEmailAlert.classList.add("hidden");
   }
 
   if (!first) {
-    firstAlert.classList.remove("hidden");
+    signupFirstNameAlert.classList.remove("hidden");
   } else {
-    firstAlert.classList.add("hidden");
+    signupFirstNameAlert.classList.add("hidden");
   }
 
   if (!last) {
-    lastAlert.classList.remove("hidden");
+    signupLastNameAlert.classList.remove("hidden");
   } else {
-    lastAlert.classList.add("hidden");
+    signupLastNameAlert.classList.add("hidden");
   }
 
   if (!password || password.length < 6) {
-    passwordAlert.classList.remove("hidden");
+    signupPasswordAlert.classList.remove("hidden");
   } else {
-    passwordAlert.classList.add("hidden");
+    signupPasswordAlert.classList.add("hidden");
   }
 
   if (first && last && email && password) {
@@ -110,12 +111,10 @@ const userSignUp = async (event) => {
     });
 
     // if (response.ok) {
-    if (1 == 12) {
-      console.log("ok");
+    if (response.ok) {
       document.location.replace("/locations");
     } else {
-      console.log("not ok");
-      signupAlert.classList.remove("hidden");
+      signupFailedAlert.classList.remove("hidden");
     }
   }
 };
