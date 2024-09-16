@@ -38,7 +38,7 @@ Adam Mathis <br>
 [Github](https://github.com/adammathis05) <br>
 Models, routes, handlebars
 
-Elliot Davis <br>
+Elliott Davis <br>
 [Github](https://github.com/crestonesoftware) <br>
 Data design, seed data, Render deployment, 'add' page
 
