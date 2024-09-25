@@ -1,6 +1,7 @@
 import React from "react";
+// import "./css/nav.css";
 
-export default function DarkNav() {
+export default function Nav() {
   return (
     <>
       <a href="/" className="grotesque dark" id="nav-title">
@@ -39,16 +40,16 @@ export default function DarkNav() {
           <a href="/locations" className="fade-in">
             Locations
           </a> */}
-          {/* TODO display conditional on being logged in */}
-          {/* {{#if loggedIn}}
+      {/* TODO display conditional on being logged in */}
+      {/* {{#if loggedIn}}
       <a href="/add" className="fade-in">Add</a>
       <a href="/" className="fade-in" id="logout">Logout</a>
     {{else}} */}
-          <a href="/login" className="fade-in" id="login">
-            Login
-          </a>
-          {/* {{/if}} */}
-        {/* </div>
+      <a href="/login" className="fade-in" id="login">
+        Login
+      </a>
+      {/* {{/if}} */}
+      {/* </div>
       </div> */}
 
       {/* JAVASCRIPT */}

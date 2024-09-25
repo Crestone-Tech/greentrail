@@ -1,22 +1,19 @@
 import React from "react";
-
-import "./App.css";
 import { Outlet } from "react-router-dom";
-import GitHubLink from "./components/GitHubLink";
-import DarkNav from "./components/DarkNav";
+
+import Footer from "./components/Footer";
+import Nav from "./components/Nav";
+import "./css/styles.css";
+import "./css/effects.css";
 
 function App() {
   return (
     <>
-      <header>
-        <DarkNav />
-      </header>
+      <Nav />
       <main>
         <Outlet />
       </main>
-      <footer id="contact">
-        <GitHubLink />
-      </footer>
+      <Footer />
     </>
   );
 }

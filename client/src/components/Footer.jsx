@@ -1,7 +1,7 @@
 import React from "react";
-import "./git-hub-link.css";
+import "../css/footer.css";
 
-export default function GitHubLink() {
+export default function Footer() {
   return (
     <>
       <a href="https://github.com/Crestone-Tech/greentrail" target="_blank">
