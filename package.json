@@ -8,7 +8,7 @@
     "server_only": "node server/server.js --ignore client",
     "seed": "cd server && npm run seed",
     "install": "cd server && npm i && cd ../client && npm i",
-    "develop": "concurrently \"cd server && npm run watch\" \"cd client && npm run dev\"",
+    "dev": "concurrently \"cd server && npm run watch\" \"cd client && npm run dev\"",
     "both": "concurrently \"cd server && npm run watch\" \"cd client && npm run dev\""
   },
   "repository": {
